@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  margin-bottom: 50px;
 }
 
 .App-logo {
@@ -40,4 +41,13 @@
 img {
   width: 150px;
   border-radius: 50%;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  height: 50px;
+  background-color: lemonchiffon;
+  margin-top: 50px;
 }

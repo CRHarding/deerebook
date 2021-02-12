@@ -17,7 +17,7 @@ class App extends Component {
         name: "Casey Harding",
         username: "CRHarding",
         image: "https://pyxis.nymag.com/v1/imgs/5e4/dfd/c59573793cc957a78d232f82d3832af173-17-thor.rsquare.w700.jpg",
-        friendList: ["Leo"]
+        friendList: []
       },
       apiDataLoaded: false,
       potentialFriends: []
@@ -44,6 +44,22 @@ class App extends Component {
     })
   }
 
+  addFriend = (newFriend) => {
+    const currentFriends = this.state.user;
+    currentFriends.friendList.push(newFriend);
+
+    const potentialFriends = this.state.potentialFriends;
+    const newPotentialFriends = potentialFriends.filter(friend => {
+      return newFriend.login.uuid !== friend.login.uuid
+    })
+    console.log(newPotentialFriends);
+
+    this.setState({
+      user: currentFriends,
+      potentialFriends: newPotentialFriends
+    })
+  }
+
   render() {
     return (
       <div className="App">
@@ -56,8 +72,12 @@ class App extends Component {
           <Profile user={this.state.user} />
         )} />
         <Route path="/users" render={() => (
-          <FriendsPage potentialFriends={this.state.potentialFriends} />
+          <FriendsPage
+            potentialFriends={this.state.potentialFriends}
+            addFriend={this.addFriend}
+          />
         )} />
+        <footer>This is my footer</footer>
       </div>
     );
   }
