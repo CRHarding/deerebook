@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Route, Link } from 'react-router-dom';
 
 import logo from './logo.svg';
 import './App.css';
@@ -39,17 +40,24 @@ class App extends Component {
     ];
 
     this.setState({
-      potentialFriends: friends,
-      apiDataLoaded: true
+      potentialFriends: friends
     })
   }
 
   render() {
     return (
       <div className="App">
+        <nav>
+          <Link to="/">Profile</Link>
+          <Link to="/users">Users</Link>
+        </nav>
         <h1>CaseyBook</h1>
-        <Profile user={this.state.user} />
-        <FriendsPage potentialFriends={this.state.potentialFriends} />
+        <Route exact path="/" render={() => (
+          <Profile user={this.state.user} />
+        )} />
+        <Route path="/users" render={() => (
+          <FriendsPage potentialFriends={this.state.potentialFriends} />
+        )} />
       </div>
     );
   }
