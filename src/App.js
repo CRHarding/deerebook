@@ -4,6 +4,7 @@ import logo from './logo.svg';
 import './App.css';
 
 import Profile from './components/Profile';
+import FriendsPage from './components/FriendsPage';
 
 class App extends Component {
   constructor(props) {
@@ -26,6 +27,7 @@ class App extends Component {
       <div className="App">
         <h1>CaseyBook</h1>
         <Profile user={this.state.user} />
+        <FriendsPage />
       </div>
     );
   }
