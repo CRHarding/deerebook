@@ -17,7 +17,8 @@ class App extends Component {
         name: "Casey Harding",
         username: "CRHarding",
         image: "https://pyxis.nymag.com/v1/imgs/5e4/dfd/c59573793cc957a78d232f82d3832af173-17-thor.rsquare.w700.jpg",
-        friendList: []
+        friendList: [],
+        postList: []
       },
       apiDataLoaded: false,
       potentialFriends: []
@@ -64,11 +65,11 @@ class App extends Component {
     return (
       <div className="App">
         <nav>
-          <Link to="/">Profile</Link>
+          <Link to="/profile">Profile</Link>
           <Link to="/users">Users</Link>
         </nav>
         <h1>CaseyBook</h1>
-        <Route exact path="/" render={() => (
+        <Route path="/profile" render={() => (
           <Profile user={this.state.user} />
         )} />
         <Route path="/users" render={() => (
