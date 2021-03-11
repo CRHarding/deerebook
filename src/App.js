@@ -16,7 +16,7 @@ class App extends Component {
       user: {
         name: "Casey Harding",
         username: "CRHarding",
-        image: "https://pyxis.nymag.com/v1/imgs/5e4/dfd/c59573793cc957a78d232f82d3832af173-17-thor.rsquare.w700.jpg",
+        image: "https://static1.srcdn.com/wordpress/wp-content/uploads/2019/01/Thor-and-Stormbreaker.jpg",
         friendList: [],
         postList: []
       },
